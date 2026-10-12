@@ -57,5 +57,18 @@ A short description of the project.
     └── plots.py                <- Code to create visualizations
 ```
 
+### How to run
+- python -m venv .penguin-venv
+- source .penguin-venv/bin/activate
+- python -m pip install -r requirements.txt           
+- ./.penguin-venv/bin/mlflow server \                      
+  --backend-store-uri sqlite:///mlflow.db \
+  --host 127.0.0.1 \
+  --port 5000
+
+In another terminal execute train.py with your desired hyperparameters!
+
+```python penguin_species_classifier/modeling/train.py --C 1.0 --kernel rbf --gamma 0.1 --seed 42 --run_name svc-fixed-gamma --model_name penguin_species_svc_4```
+
 --------
 
